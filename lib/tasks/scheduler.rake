@@ -11,7 +11,7 @@ task :update_feed => :environment do
   }
 
   # 使用したxmlデータ（毎日朝6時更新）：以下URLを入力すれば見ることができます。
-  url  = "https://www.drk7.jp/weather/xml/13.xml"
+  url  = "https://www.drk7.jp/weather/xml/27.xml"
   # xmlデータをパース（利用しやすいように整形）
   xml  = open( url ).read.toutf8
   doc = REXML::Document.new(xml)
@@ -25,23 +25,23 @@ task :update_feed => :environment do
   min_per = 20
   if per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per
     word1 =
-      ["いい朝だね！",
-       "今日もよく眠れた？",
+      ["いい朝だにゃ〜！",
+       "今日もよく眠れたかにゃ？",
        "二日酔い大丈夫？",
-       "早起きしてえらいね！",
-       "いつもより起きるのちょっと遅いんじゃない？"].sample
+       "早起きしてえらいにゃん！",
+       "寝坊しそうになったにゃん…"].sample
     word2 =
-      ["気をつけて行ってきてね(^^)",
-       "良い一日を過ごしてね(^^)",
-       "雨に負けずに今日も頑張ってね(^^)",
-       "今日も一日楽しんでいこうね(^^)",
+      ["気をつけて行ってきてにゃ(^^)",
+       "良い一日を過ごしてにゃ(^^)",
+       "雨に負けずに今日も頑張ってにゃ(^^)",
+       "今日も一日楽しんでいこにゃ(^^)",
        "楽しいことがありますように(^^)"].sample
     # 降水確率によってメッセージを変更する閾値の設定
     mid_per = 50
     if per06to12.to_i >= mid_per || per12to18.to_i >= mid_per || per18to24.to_i >= mid_per
-      word3 = "今日は雨が降りそうだから傘を忘れないでね！"
+      word3 = "今日は雨が降りそうだから傘を忘れないでにゃ！"
     else
-      word3 = "今日は雨が降るかもしれないから折りたたみ傘があると安心だよ！"
+      word3 = "今日は雨が降るかもしれないから折りたたみ傘があると安心だにゃ！"
     end
     # 発信するメッセージの設定
     push =
