@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Product name
 
-Things you may want to cover:
+雨の日お知らせネコさん
 
-* Ruby version
+# Overview
 
-* System dependencies
+雨が降る日の朝7時にLINEで通知するLINE botです
 
-* Configuration
+# Technical tutorial
 
-* Database creation
+「今日雨降るよちゃん」を作ってみよう！【初学者向け】〜Ruby on RailsによるLINE botチュートリアル②〜
+https://note.mu/ysk1180/n/nabfead7e8502
 
-* Database initialization
+# Version
 
-* How to run the test suite
+ruby 2.5.1
+Rails 5.2.3
+PostgreSQL 11.4
 
-* Services (job queues, cache servers, search engines, etc.)
+# Release date
 
-* Deployment instructions
+2019/08/06
 
-* ...
+# Author
+@sjU8shLsaNj1kjh
+
