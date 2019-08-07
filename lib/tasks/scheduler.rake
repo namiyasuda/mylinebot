@@ -22,7 +22,7 @@ task :update_feed => :environment do
   per12to18 = doc.elements[xpath + 'period[3]'].text
   per18to24 = doc.elements[xpath + 'period[4]'].text
   # メッセージを発信する降水確率の下限値の設定
-  min_per = 20
+  min_per = 30
   if per06to12.to_i >= min_per || per12to18.to_i >= min_per || per18to24.to_i >= min_per
     word1 =
       ["いい朝だにゃ〜！",
@@ -31,11 +31,11 @@ task :update_feed => :environment do
        "早起きしてえらいにゃん！",
        "寝坊しそうになったにゃん…"].sample
     word2 =
-      ["気をつけて行ってきてにゃ",
-       "良い一日を過ごしてにゃ",
-       "雨に負けずに今日も頑張ってにゃ",
-       "今日も一日楽しんでいこにゃ",
-       "楽しいことがありますように"].sample
+      ["気をつけて行ってきてにゃ~",
+       "良い一日を過ごしてにゃ~",
+       "雨に負けずに今日も頑張ってにゃ~",
+       "今日も一日楽しんでいこにゃ~",
+       "楽しいことがありますように~"].sample
     # 降水確率によってメッセージを変更する閾値の設定
     mid_per = 50
     if per06to12.to_i >= mid_per || per12to18.to_i >= mid_per || per18to24.to_i >= mid_per
